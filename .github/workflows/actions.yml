@@ -4,7 +4,13 @@ on:
 #  schedule:
 #   - cron: "0/5 * * * *"
 #   - cron: "0/6 * * * *"
-#  push:
+  push:
+    branches:
+      - master
+      - "feature/**" #matches anything that starts with feature
+      - "!feature/featC"# will ignore featC
+    paths-ignore:
+      - "**.md"
   repository_dispatch:
     types: [build]
   pull_request:
