@@ -6,10 +6,11 @@ jobs:
 
   run-shell-command:
     runs-on: ubuntu-latest
+    timeout-minutes: 360
     steps: 
       - name: echo a string
         run: echo "Hello World"
-      - name: multiline script 
+      - name: multiline script
         run: |
            node -v 
            npm -v
